@@ -1,0 +1,59 @@
+// Mixins ======================================================================================== /
+
+@mixin clearfix { // micro clearfix hack
+  zoom: 1;
+  &:before, &:after { content: ""; display: table; }
+  &:after { clear: both; }
+}
+
+@mixin border-box { // border-box mixin
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@mixin color-font-light{
+	color: #fff;
+}
+
+$default_rounded_amount: 5px;
+
+@mixin roundedCorners($topleft: $default_rounded_amount, $topRight: $default_rounded_amount,$bottomLeft: $default_rounded_amount,$bottomRight: $default_rounded_amount){
+	   -webkit-border-radius: $topleft $topRight $bottomLeft $bottomRight;
+  	 -moz-border-radius: $topleft $topRight $bottomLeft $bottomRight;
+     border-radius: $topleft $topRight $bottomLeft $bottomRight;
+     behavior: url(helper/PIE.htc);
+}
+
+//The box-shadow property can accept a comma-separated list of shadows, each defined by 2-4 length values 
+//(specifying in order 
+//the horizontal offset, vertical offset, optional blur distance and optional spread distance of the shadow), an optional color value and an optional ‘inset‘ keyword (to create an inner shadow, rather than the default outer shadow).
+
+$defaultOffset: 0;
+$defaultSpread: 15px;
+$defaultBlurDistance: 10px;
+$defaultSpreadDistance:-10px;
+$defaultboxColor: rgba(128, 128, 128, 0.3);
+//0 15px 10px -10px rgba(128, 128, 128, 0.3)
+@mixin box-shadow($offset: $defaultOffset, $spread: $defaultSpread, $blur: $defaultBlurDistance, $spreadDistance: $defaultSpreadDistance,$color:$defaultboxColor){
+  -moz-box-shadow: $offset $spread $blur $spreadDistance $color;
+  -webkit-box-shadow: $offset $spread $blur $spreadDistance $color;
+  box-shadow: $offset $spread $blur $spreadDistance $color;
+  behavior: url(helper/PIE.htc);
+}
+
+@mixin box-shadow-noIE($offset: $defaultOffset, $spread: $defaultSpread, $blur: $defaultBlurDistance, $spreadDistance: $defaultSpreadDistance,$color:$defaultboxColor){
+  -moz-box-shadow: $offset $spread $blur $spreadDistance $color;
+  -webkit-box-shadow: $offset $spread $blur $spreadDistance $color;
+  box-shadow: $offset $spread $blur $spreadDistance $color;
+
+}
+
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}
