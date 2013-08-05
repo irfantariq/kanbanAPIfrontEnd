@@ -60,7 +60,7 @@ del {
   text-decoration: line-through; }
 
 abbr[title], dfn[title] {
-  border-bottom: 1px dotted #000;
+  border-bottom: 1px dotted black;
   cursor: help; }
 
 /* tables still need cellspacing="0" in the markup */
@@ -80,7 +80,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -245,5 +245,28 @@ textarea:-moz-placeholder {
 -------------------------------------------------------------------------------*/
 /* Media queries!
 -------------------------------------------------------------------------------*/
+label {
+  float: left;
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  width: 100%; }
+
+.wrapper {
+  margin: 5em auto auto;
+  width: 60%;
+  background-color: #c7effd;
+  padding: 3em;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  behavior: url(helper/PIE.htc);
+  -moz-box-shadow: 0 15px 10px -10px rgba(128, 128, 128, 0.3);
+  -webkit-box-shadow: 0 15px 10px -10px rgba(128, 128, 128, 0.3);
+  box-shadow: 0 15px 10px -10px rgba(128, 128, 128, 0.3);
+  behavior: url(helper/PIE.htc); }
+
+body {
+  line-height: 2em; }
+
 .test {
   margin: 50px; }

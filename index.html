@@ -14,7 +14,7 @@
 	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title></title>
+	<title>NQ start page</title>
 	
 	<meta name="title" content="" />
 	<meta name="description" content="" />
@@ -56,22 +56,7 @@
 		 Before you move to production, you should generate a custom build that only has the detects you need. -->
 	<script src="_/js/modernizr-2.6.2.dev.js"></script>
 	
-	<!-- Application-specific meta tags -->
-	<!-- Windows 8 -->
-	<meta name="application-name" content="" /> 
-	<meta name="msapplication-TileColor" content="" /> 
-	<meta name="msapplication-TileImage" content="" />
-	<!-- Twitter -->
-	<meta name="twitter:card" content="">
-	<meta name="twitter:site" content="">
-	<meta name="twitter:title" content="">
-	<meta name="twitter:description" content="">
-	<meta name="twitter:url" content="">
-	<!-- Facebook -->
-	<meta property="og:title" content="" />
-	<meta property="og:description" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:image" content="" />
+
 
 </head>
 
@@ -81,9 +66,9 @@
 
 	<header>
 		
-		<h1><a href="/">Page Title</a></h1>
+		<h1>Add your request</h1>
 		
-		<nav>
+	<!--	<nav>
 		
 			<ol>
 				<li><a href="">Nav Link 1</a></li>
@@ -92,31 +77,56 @@
 			</ol>
 		
 		</nav>
+	-->
 	
 	</header>
 	
 	<article>
 		
-		<h1>Article Header</h1>
+		<h2>All fields are mandatory:</h2>
 		
-		<p>Etiam pretium odio eu mi convallis vitae varius neque pharetra. Nulla vestibulum nisi ut sem cursus sed mattis nisi egestas.</p>
+		<p>Please fill out this form to the best of your knowledge</p>
+		<form action="addToKanban.php" name="nq" method="get" >
+		<label for="category"> 
+			Please select a category your request falls into:</label><br />
+			<select name="category" id="category">
+			  <option value="Intranet">Intranet</option>
+			  <option value="Big Lottery Fund (including Ask)">Big Lottery Fund (including Ask)</option>
+			  <option value="Big Blog (including Scotland/Wales/NI)">Big Blog (including Scotland/Wales/NI)</option>
+			  <option value="People’s Millions">People’s Millions</option>
+			  <option value="People Powered Change">People Powered Change</option>
+			  <option value="Millennium Now">Millennium Now</option>
+			  <option value="Village SOS">Village SOS</option>
+			  <option value="Other">Other</option>
+			</select> 
 		
-		<h2>Article Subhead</h2>
+		<label for="catURL">
+			Input the URL where the issue occurs:</label>
+			<br />
+			<input type="text" name="catURL"  id="catURL"/>
 		
-		<p>Vestibulum lacus erat, volutpat vel dignissim at, fringilla ut felis.</p>
-	
-	</article>
-	
-	<aside>
-	
-		<h2>Sidebar Content</h2>
-	
-	</aside>
+		<label for="title">Add a short description about this issue/request:</label><br>
+			<input type="text" name="title" id="title">
+		
+		<label for="description">Add a description of the issue/request below:</label><br />
+			<textarea name="description" id="description"></textarea>
+
+		
+		<label for="uMail">
+			Add your email address if you want a response:</label><br>
+			<input type="text" name="uMail" id="uMail" />
+		<label for="attachment">
+		<!--	Add attachments:</label><br />
+			<input type="file" name="file" id="file"><br>
+		-->
+		<label for="submit">&nbsp;</label>
+			<input type="submit" name="submit" id="submit" value="submit" />
+		
+		</form>
+
 	
 	<footer>
-		
-		<p><small>&copy; Copyright Philipp Krasser 2013. All Rights Reserved.</small></p>
-		
+			
 	</footer>
 
 </div>

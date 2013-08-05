@@ -1,0 +1,12 @@
+.wrapper{
+	margin:5em auto auto;
+	width: 60%;
+	background-color: #c7effd;
+	padding:3em;
+	@include roundedCorners();
+	@include box-shadow();
+}
+
+body{
+	line-height: 2em;
+}
